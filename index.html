@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahrukh Zafar | Computer Science Student</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Portfolio.</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="mode-toggle">☀️ Light Mode</button>
+    </header>
 
-  <header>
-    <nav>
-      <a href="index.html" class="logo">Mahrukh Zafar</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-toggle">☀️ Light Mode</button>
-    </nav>
-  </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Explore my learning journey and projects.</p>
+        </section>
 
-  <main>
-    <section class="hero">
-      <h1>Hello, World! I'm <br><span class="highlight">Mahrukh Zafar</span></h1>
-      <h2>Computer Science Student & Aspiring Cybersecurity Professional</h2>
-      <p>Building software, solving problems, and continuously learning one project at a time.</p>
-      <div class="btn-group">
-        <a href="projects.html" class="btn btn-primary">View Projects</a>
-        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
-      </div>
-    </section>
-  </main>
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
 
-  <footer>
-    <p>Designed & Built by Mahrukh Zafar</p>
-    <p>&copy; 2026. Built with passion.</p>
-  </footer>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
 
-  <script src="script.js"></script>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <p id="success-message" style="display: none; color: green; margin-top: 15px;">Thank you! Your message has been sent.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mahrukh. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
