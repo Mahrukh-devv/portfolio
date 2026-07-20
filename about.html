@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" class="logo">Portfolio.</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="theme-toggle" class="theme-toggle">☀️ Light Mode</button></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <main>
-    <h2 class="section-title">About Me</h2>
-    <div class="card" style="max-width: 800px;">
-      <p style="margin-bottom: 1rem;">I am a dedicated Computer Science undergraduate driven by curiosity about how underlying systems operate, code security, and creating clean web interfaces.</p>
-      <p style="margin-bottom: 1rem;">My journey into tech began with a deep desire to build applications that solve practical issues. Through rigorous coursework and independent learning, I am constantly expanding my technical repertoire.</p>
-      <p><strong>Interests & Goals:</strong> Focusing heavily on core programming paradigms, database design, and working towards advanced topics in cybersecurity.</p>
-    </div>
-  </main>
+    <header>
+        <h1>Portfolio.</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="mode-toggle">☀️ Light Mode</button>
+    </header>
 
-  <footer>
-    <p>&copy; 2026 Mahrukh. Built with passion.</p>
-  </footer>
+    <main>
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I am learning web development and building projects as part of my journey.</p>
+        </section>
+    </main>
 
-  <script src="js/script.js"></script>
+    <footer>
+        <p>&copy; 2026 Mahrukh. Built with passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
