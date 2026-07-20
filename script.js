@@ -1,18 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const facts = [
-        "Currently working through CS50x while building a content brand.",
-        "Certified in Cisco CCNA and Google Cybersecurity.",
-        "Deadpan on Instagram, still not here to be liked.",
-        "Focused on cybersecurity as a career path."
-    ];
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme') || 'dark';
 
-    const btn = document.querySelector('#quote-btn');
-    const output = document.querySelector('#quote-output');
+  if (currentTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    if (themeToggle) themeToggle.textContent = '🌙 Dark Mode';
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if (themeToggle) themeToggle.textContent = '☀️ Light Mode';
+  }
 
-    if (btn) {
-        btn.addEventListener('click', function() {
-            const randomFact = facts[Math.floor(Math.random() * facts.length)];
-            output.textContent = randomFact;
-        });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙 Dark Mode';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️ Light Mode';
+      }
+    });
+  }
+
+  const currentLocation = location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentLocation) {
+      link.classList.add('active');
     }
+  });
 });
