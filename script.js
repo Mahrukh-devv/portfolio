@@ -1,35 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme') || 'dark';
-
-  if (currentTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-    if (themeToggle) themeToggle.textContent = '🌙 Dark Mode';
-  } else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    if (themeToggle) themeToggle.textContent = '☀️ Light Mode';
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      let theme = document.documentElement.getAttribute('data-theme');
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        themeToggle.textContent = '🌙 Dark Mode';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = '☀️ Light Mode';
-      }
+ document.addEventListener("DOMContentLoaded", () => {
+    // Light/Dark Mode Toggle Script
+    const modeToggle = document.getElementById("mode-toggle");
+    modeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+            modeToggle.textContent = "🌙 Dark Mode";
+        } else {
+            modeToggle.textContent = "☀️ Light Mode";
+        }
     });
-  }
 
-  const currentLocation = location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-links a');
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentLocation) {
-      link.classList.add('active');
+    // Form Submission Handler
+    const contactForm = document.getElementById("contact-form");
+    const successMessage = document.getElementById("success-message");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent standard page refresh
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Log submission object to the console (CS50 requirement check)
+            console.log({ name, email, message });
+
+            // Hide form and show success message
+            contactForm.style.display = "none";
+            successMessage.style.display = "block";
+        });
     }
-  });
 });
